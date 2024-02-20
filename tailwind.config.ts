@@ -8,6 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        "min-grow-min": "min-content 1fr min-content"
+      },
+      gridTemplateRows: {
+        "min-grow": "min-content 1fr"
+      },
+      fontFamily: {
+        wave: "'Wavefont', system-ui",
+        maiden: "'iron-maiden'",
+        pixyboy: "'pixyboy'",
+        robotics: "'robotics'",
+      },
+      colors: {
+        background: "#20282b",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
