@@ -23,11 +23,10 @@ export const Navbar: React.FC<NavbarProps> = ({ title1, title2 }) => {
                     className="flex cursor-pointer items-center justify-center gap-3 w-fit place-items-center"
                 >
                     <div>
-                        <Image
+                        <img
+                            className="w-10 aspect-square"
                             src="/assets/logo.png"
                             alt="logo"
-                            height={60}
-                            width={60}
                         />
                     </div>
                     <div className="grid font-semibold text-lg">

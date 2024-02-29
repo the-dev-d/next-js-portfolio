@@ -48,12 +48,11 @@ export const Face = () => {
                     style={{
                         clipPath: "polygon(50% -20%, 0 23%, 62% 99%, 100% 0)"
                     }}
-                    className="w-full  aspect-square absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    className="w-full aspect-square absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                    <Image
-                        className="scale-110 group-hover:scale-125 transition-all object-contain"
+                    <img
+                        className="scale-110 w-full h-full object-contain group-hover:scale-125 transition-all object-contain"
                         src="/assets/profile.png"
-                        fill={true}
                         alt="face"
                     />
                 </div>
