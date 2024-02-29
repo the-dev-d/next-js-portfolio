@@ -52,7 +52,7 @@ export const Face = () => {
                 >
                     <img
                         className="scale-110 w-full h-full object-contain group-hover:scale-125 transition-all object-contain"
-                        src="/assets/profile.png"
+                        src="/assets/profile.webp"
                         alt="face"
                     />
                 </div>
