@@ -6,35 +6,68 @@ type ChartProps = {
 
 export const Charts: React.FC<ChartProps> = async ({ children }) => {
     const langShare = await getLanguageChart();
+    let langColorMap: any = {};
     return (
         <div className="p-6">
             <h3 className="my-6">{children}</h3>
             <div className="mt-6">
-                {Object.keys(langShare).map(
-                    (language: string, index: number) => {
-                        // Add type annotation to index parameter
-                        return (
-                            <div
-                                key={index}
-                                className="w-full flex items-center bg-emerald-900/30 rounded-md my-2"
-                            >
+                <div className="w-full flex gap-1">
+                    {Object.keys(langShare).map(
+                        (language: string, index: number) => {
+                            let color;
+                            do {
+                                color =
+                                    "#" +
+                                    ((Math.random() * 0xffffff) << 0)
+                                        .toString(16)
+                                        .padStart(6, "0");
+                            } while (langColorMap[color] !== undefined);
+                            const map = {
+                                color,
+                                percentage: langShare[language]
+                            };
+                            langColorMap[language] = map;
+
+                            return (
                                 <div
+                                    key={index}
+                                    className="flex items-center bg-emerald-900/30 rounded-md my-2 p-2 py-4"
                                     style={{
-                                        minWidth: `${langShare[language]}%`
+                                        width: `${langShare[language]}%`,
+                                        backgroundColor: color
                                     }}
-                                    className="h-full flex items-center justify-end py-4 px-2 bg-gradient-to-l from-indigo-500 to-indigo-400 rounded-md"
+                                ></div>
+                            );
+                        }
+                    )}
+                </div>
+                <div className="flex my-6 gap-6 flex-wrap">
+                    {Object.keys(langColorMap).map(
+                        (language: string, index: number) => {
+                            return (
+                                <div
+                                    className="flex gap-2 items-center justify-center"
+                                    key={index}
                                 >
-                                    <span className="text-indigo-950 text-sm lg:text-base font-semibold">
-                                        {langShare[language]}%
+                                    <div
+                                        style={{
+                                            backgroundColor:
+                                                langColorMap[language].color
+                                        }}
+                                        className="p-1 rounded-md"
+                                    >
+                                        <span className="text-xs font-semibold">
+                                            {langColorMap[language].percentage}%
+                                        </span>
+                                    </div>
+                                    <span className="mr-2 text-xs font-semibold">
+                                        {language}
                                     </span>
                                 </div>
-                                <span className="ml-4 text-indigo-200 font-semibold">
-                                    {language}
-                                </span>
-                            </div>
-                        );
-                    }
-                )}
+                            );
+                        }
+                    )}
+                </div>
             </div>
         </div>
     );

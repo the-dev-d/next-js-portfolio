@@ -1,13 +1,12 @@
 export const getOSNames = async () => {
     const res = await fetch("https://api.dhaivathlal.in/os/");
     const data = await res.json();
-    console.log("fetching os names");
+    // console.log("fetching os names");
     return data;
 };
 
 export const getLanguageChart = async () => {
     const headers = { Authorization: `Bearer ${process.env.GH_AUTH_TOKEN}` };
-    console.log("fetching stats");
     const response = await fetch("https://api.github.com/user/repos", {
         headers
     });

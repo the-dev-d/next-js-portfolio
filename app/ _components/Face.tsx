@@ -58,15 +58,15 @@ export const Face = () => {
                 </div>
             </div>
             <div className="grid grid-cols-3 lg:grid-cols-none text-4xl gap-6 w-full lg:w-fit place-items-center">
-                <div className="bg-gradient-to-tr hover:from-indigo-600 hover:bg-indigo-400 hover:text-white transition-all from-emerald-500 to-emerald-300 p-2 rounded-full w-14 aspect-square grid place-items-center">
+                <a href="https://www.instagram.com/dhaivath_lal/" className="bg-gradient-to-tr hover:from-indigo-600 hover:bg-indigo-400 hover:text-white transition-all from-emerald-500 to-emerald-300 p-2 rounded-full w-14 aspect-square grid place-items-center">
                     <i className="fa-brands fa-instagram"></i>
-                </div>
-                <div className="bg-gradient-to-tr hover:from-indigo-600 hover:bg-indigo-400 hover:text-white transition-all from-emerald-500 to-emerald-300 p-2 rounded-full w-14 aspect-square grid place-items-center">
+                </a>
+                <a href="https://github.com/the-dev-d/" className="bg-gradient-to-tr hover:from-indigo-600 hover:bg-indigo-400 hover:text-white transition-all from-emerald-500 to-emerald-300 p-2 rounded-full w-14 aspect-square grid place-items-center">
                     <i className="fa-brands fa-github"></i>
-                </div>
-                <div className="bg-gradient-to-tr hover:from-indigo-600 hover:bg-indigo-400 hover:text-white transition-all from-emerald-500 to-emerald-300 p-2 rounded-full w-14 aspect-square grid place-items-center">
+                </a>
+                <a href="https://www.linkedin.com/in/dhaivath-lal-296a2923a/?originalSubdomain=ine" className="bg-gradient-to-tr hover:from-indigo-600 hover:bg-indigo-400 hover:text-white transition-all from-emerald-500 to-emerald-300 p-2 rounded-full w-14 aspect-square grid place-items-center">
                     <i className="fa-brands fa-linkedin"></i>
-                </div>
+                </a>
             </div>
         </div>
     );
